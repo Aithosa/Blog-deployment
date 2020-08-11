@@ -14,14 +14,14 @@ ufw 相关的文件和文件夹有：
 
 ## ufw
 
-ufw 是 Ubuntu 自带的防火墙。由于 LInux 原始的防火墙工具 iptables 过于繁琐，所以 ubuntu 默认提供了一个基于 iptable 之上的防火墙工具 ufw。
+ufw 是 Ubuntu 自带的防火墙。由于 Linux 原始的防火墙工具 iptables 过于繁琐，所以 ubuntu 默认提供了一个基于 iptable 之上的防火墙工具 ufw。
 
 ### 安装及查看
 
 安装ufw
 
     $ sudo apt-get install ufw
-    $ sudo apt  install ufw    # 安装ufw
+    $ sudo apt install ufw    # 安装ufw
 
 查看防火墙版本
 
@@ -33,7 +33,7 @@ ufw 是 Ubuntu 自带的防火墙。由于 LInux 原始的防火墙工具 iptabl
 
 ### 开启/禁用设置
 
-    $ sudo  ufw enable|disable    # 开启/关闭防火墙 (默认设置是’disable’)
+    $ sudo ufw enable|disable    # 开启/关闭防火墙 (默认设置是’disable’)
 
     $ sudo ufw enable    # 开启防火墙
 
