@@ -1,12 +1,12 @@
 # Ubuntu 防火墙设置
 
-linux 2.4 内核以后提供了一个非常优秀的防火墙工具：`netfilter/iptables`，其免费且功能强大，可以对流入、流出的信息进行细化控制，可以实现防火墙、NAT（网络地址翻译）和数据包的分割等功能。netfilter 工作在内核内部，而 iptables 则是让用户定义规则集的表结构。
+linux 2.4 内核以后提供了一个非常优秀的防火墙工具：`netfilter/iptables`，功能强大，可以对流入、流出的信息进行细化控制，可以实现防火墙、NAT（网络地址翻译）和数据包的分割等功能。netfilter 工作在内核内部，而 iptables 则是让用户定义规则集的表结构。
 
-但是 iptables 的规则稍微有些“复杂”，因此 ubuntu 提供了 ufw 这个设定工具，以简化 iptables 的某些设定，其后台仍然是 iptables。ufw 即 uncomplicated firewall 的简称，一些复杂的设定还是要去 iptables。
+但是 iptables 的规则稍微有些复杂，因此 ubuntu 提供了 ufw 这个设定工具，以简化 iptables 的某些设定，其后台仍然是 iptables。ufw 即 uncomplicated firewall 的简称，一些复杂的设定还是要去 iptables。
 
 ufw 相关的文件和文件夹有：
 
-**`/etc /ufw/`**：里面是一些 ufw 的环境设定文件，如 `before.rules`、`after.rules`、`sysctl.conf`、`ufw.conf`，及 for ip6 的 `before6.rule` 及 `after6.rules`。这些文件一般按照默认的设置进行就可以。
+**`/etc/ufw/`**：里面是一些 ufw 的环境设定文件，如 `before.rules`、`after.rules`、`sysctl.conf`、`ufw.conf`，及 for ip6 的 `before6.rule` 及 `after6.rules`。这些文件一般按照默认的设置进行就可以。
 
 开启 ufw 之后，`/etc/ufw/sysctl.conf` 会覆盖默认的 `/etc/sysctl.conf` 文件，若原来的 `/etc/sysctl.conf` 做了修改，启动 ufw 后，如 `/etc/ufw/sysctl.conf` 中有新赋值，则会覆盖 `/etc/sysctl.conf` 的值，否则还以 `/etc/sysctl.conf` 为准。当然你可以通过修改`/etc/default/ufw`中的“IPT_SYSCTL=”条目来设置使用哪个 `sysctrl.conf`。
 
@@ -48,7 +48,7 @@ ufw 是 Ubuntu 自带的防火墙。由于 Linux 原始的防火墙工具 iptabl
 
 ### 规则添加
 
-可以用"协议：端口"的方式指定一个存在于 `/etc/services` 中的服务名称，也可以通过包的 `meta-data` 。
+可以用"协议:端口"的方式指定一个存在于 `/etc/services` 中的服务名称，也可以通过包的 `meta-data` 。
 <br>'allow' 参数将把条目加入 `/etc/ufw/maps` ，而 'deny' 则相反。
 
     sudo ufw allow|deny [service]
@@ -84,13 +84,13 @@ UFW 同时支持出入口过滤。用户可以使用 `in` 或 `out` 来指定向
 
 ### 使用建议
 
-一般用户只需如下设置：
+一般可做如下设置，服务器可能需要开放`22/tcp`用于ssh连接：
 
     $ sudo apt-get install ufw
     $ sudo ufw enable
     $ sudo ufw default deny
 
-以上三条命令已经足够安全了，如果你需要开放某些服务，再使用`sudo ufw allow`开启。
+如果你需要开放某些服务，再使用`sudo ufw allow`开启。
 
 ### Web blog服务器配置
 
