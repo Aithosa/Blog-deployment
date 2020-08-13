@@ -7,21 +7,21 @@
 ## 系统需求
 
 * CentOS/RHEL/Fedora/Debian/Ubuntu/Raspbian/Deepin/Aliyun/Amazon/Mint Linux发行版
-* 需要5GB以上硬盘剩余空间，MySQL 5.7,MariaDB 10至少9GB剩余空间
-* 需要128MB以上内存(128MB小内存VPS,Xen需有SWAP,OpenVZ至少要有128MB以上的vSWAP或突发内存)，注意小内存请勿使用64位系统！
-* **安装MySQL 5.6或5.7及MariaDB 10必须1G以上内存，更高版本至少要2G内存!。**
+* 需要5GB以上硬盘剩余空间，MySQL 5.7, MariaDB 10 至少9GB剩余空间
+* 需要128MB以上内存(128MB小内存VPS, Xen需有SWAP, OpenVZ至少要有128MB以上的vSWAP或突发内存)，注意小内存请勿使用64位系统！
+* **安装 MySQL 5.6 或 5.7 及 MariaDB 10 必须1G以上内存，更高版本至少要2G内存!。**
 * **安装PHP 7及以上版本必须1G以上内存!。**
-* VPS或服务器必须设置好可用的yum或apt-get源并确保能正常工作，离线安装需要增加 CheckMirror=n 参数！
+* VPS或服务器必须设置好可用的`yum`或`apt-get`源并确保能正常工作，离线安装需要增加 `CheckMirror=n` 参数！
 * Linux下区分大小写，输入命令时请注意！
-* 如有通过yum或apt-get安装的MySQL/MariaDB请自行备份数据等相关文件！
-* CentOS 5,Debian 6及之前版本其官网已经结束支持无法使用！
-* Ubuntu 18+,Debian 9+,Mint 19+,Deepin 15.7+及所有新的Linux发行版只能使用1.7进行安装！
-* PHP 7.1.* 以下版本不支持Ubuntu 19+、Debian 10等等非常新的Linux发行版！
-* 阿里云Ubuntu 14.04系统模版有问题不要用！！！
-* PHP 7.4升级或安装必须CentOS 7+,Debian 8+,Ubuntu 16.04+且必须使用1.7！！！
-* MySQL 8.0升级或安装必须CentOS 8+,Debian 9+,Ubuntu 16.04+且必须使用1.7！！！
+* 如有通过`yum`或`apt-get`安装的MySQL/MariaDB请自行备份数据等相关文件！
+* CentOS 5, Debian 6及之前版本其官网已经结束支持无法使用！
+* Ubuntu 18+, Debian 9+, Mint 19+, Deepin 15.7+ 及所有新的Linux发行版只能使用1.7进行安装！
+* PHP 7.1.* 以下版本不支持 Ubuntu 19+、Debian 10 等等非常新的Linux发行版！
+* 阿里云 Ubuntu 14.04 系统模版有问题不要用！！！
+* PHP 7.4 升级或安装必须 CentOS 7+, Debian 8+, Ubuntu 16.04+ 且必须使用1.7！！！
+* MySQL 8.0 升级或安装必须 CentOS 8+, Debian 9+, Ubuntu 16.04+ 且必须使用1.7！！！
 
-> Ubuntu 20.04 只能使用1.7版本安装包，且使用PHP 7.1 及以上脚本，因此内存必须1G以上。
+> Ubuntu 20.04 只能使用1.7版本安装包，且使用 PHP 7.1 及以上脚本，因此内存必须1G以上。
 
 ## 安装步骤
 
@@ -30,7 +30,7 @@
 登陆后运行：`screen -S lnmp`
 <br>如果提示`screen: command not found` 命令不存在可以执行：`yum install screen` 或 `apt-get install screen`安装，详细内容参考[screen教程](https://www.vpser.net/manage/run-screen-lnmp.html)。
 
-Ubuntu服务器刚设置好可能只有root用户及密码，若不是服务器可以执行`sudo passwd root`设置root用户的密码。
+> Ubuntu服务器刚设置好可能只有root用户及密码，若不是服务器可以执行`sudo passwd root`设置root用户的密码。
 
 ### 2、下载并安装LNMP一键安装包
 
@@ -38,13 +38,13 @@ Ubuntu服务器刚设置好可能只有root用户及密码，若不是服务器�
 
 #### 安装LNMP稳定版
 
-如需无人值守安装，请使用 [无人值守命令生成工具](https://lnmp.org/auto.html)，或查看[无人值守说明教程](https://lnmp.org/faq/v1-5-auto-install.html)
+如需无人值守安装，请使用[无人值守命令生成工具](https://lnmp.org/auto.html)，或查看[无人值守说明教程](https://lnmp.org/faq/v1-5-auto-install.html)
 
 	$ wget http://soft.vpser.net/lnmp/lnmp1.7.tar.gz -cO lnmp1.7.tar.gz && tar zxf lnmp1.7.tar.gz && cd lnmp1.7 && ./install.sh lnmp
 
-如需要安装LNMPA或LAMP，将`./install.sh` 后面的参数lnmp替换为lnmpa或lamp即可。如需更改网站和数据库目录、自定义Nginx参数、PHP参数模块、开启lua等需在运行`./install.sh` 命令前修改安装包目录下的 lnmp.conf 文件，详细可以查看lnmp.conf文件参数说明。
+如需要安装LNMPA或LAMP，将`./install.sh`后面的参数lnmp替换为lnmpa或lamp即可。如需更改网站和数据库目录、自定义Nginx参数、PHP参数模块、开启lua等需在运行`./install.sh` 命令前修改安装包目录下的 lnmp.conf 文件，详细可以查看 lnmp.conf 文件参数说明。
 
-> 如提示wget: command not found ，使用`yum install wget` 或 `apt-get install wget` 命令安装。
+> 如提示 wget: command not found ，使用`yum install wget` 或 `apt-get install wget` 命令安装。
 
 如下载速度慢或无法下载请更换其他下载节点，请查看[LNMP下载节点具体替换方法](https://lnmp.org/faq/lnmp-download-source.html)。
 
@@ -75,7 +75,7 @@ Enter your choice (1, 2, 3, 4, 5, 6, 7, 8, 9, 10 or 0):
 
 MySQL安装默认的就行：2
 
-密码：#yU,hM-GrG9_Pj
+密码：`#yU,hM-GrG9_Pj`, 服务器密码请设置强密码。
 
 ```
 Please setup root password of MySQL.
@@ -83,7 +83,7 @@ Please enter: #yU,hM-GrG9_Pj
 MySQL root password: #yU,hM-GrG9_Pj
 ```
 
-设置MySQL的root密码（为了安全不输入直接回车将会设置为lnmp.org#随机数字）如果输入有错误需要删除时，可以按住Ctrl再按Backspace键进行删除(个别情况下是只需要Backspace键)。输入后回车进入下一步
+设置MySQL的root密码（为了安全不输入直接回车将会设置为 lnmp.org#随机数字）如果输入有错误需要删除时，可以按住Ctrl再按Backspace键进行删除(个别情况下是只需要Backspace键)。输入后回车进入下一步
 
 ```
 Do you want to enable or disable the InnoDB Storage Engine?
@@ -108,7 +108,7 @@ You have 9 options for your PHP install.
 Enter your choice (1, 2, 3, 4, 5, 6, 7, 8, 9, 10):
 ```
 
-由于是Ubuntu 20.04, 选择7
+由于是Ubuntu 20.04, 选择7-10, 这里选择7即可
 
 ```
 You have 3 options for your Memory Allocator install.
@@ -137,12 +137,68 @@ LNMP脚本就会自动安装编译Nginx、MySQL、PHP、phpMyAdmin等软件及�
 
 如果显示Nginx: OK，MySQL: OK，PHP: OK
 
-```
-
-```
 
 并且Nginx、MySQL、PHP都是running，80和3306端口都存在，并提示安装使用的时间及Install lnmp V1.6 completed! enjoy it.的话，说明已经安装成功。
-某些系统可能会一直卡在Install lnmp V1.5 completed! enjoy it.不自动退出，可以按Ctrl+c退出。
+
+
+```
+============================== Check install ==============================
+Checking ...
+Nginx: OK
+MySQL: OK
+PHP: OK
+PHP-FPM: OK
+Clean Web Server src directory...
++------------------------------------------------------------------------+
+|          LNMP V1.7 for Ubuntu Linux Server, Written by Licess          |
++------------------------------------------------------------------------+
+|           For more information please visit https://lnmp.org           |
++------------------------------------------------------------------------+
+|    lnmp status manage: lnmp {start|stop|reload|restart|kill|status}    |
++------------------------------------------------------------------------+
+|  phpMyAdmin: http://IP/phpmyadmin/                                     |
+|  phpinfo: http://IP/phpinfo.php                                        |
+|  Prober:  http://IP/p.php                                              |
++------------------------------------------------------------------------+
+|  Add VirtualHost: lnmp vhost add                                       |
++------------------------------------------------------------------------+
+|  Default directory: /home/wwwroot/default                              |
++------------------------------------------------------------------------+
+|  MySQL/MariaDB root password: #yU,hM-GrG9_Pj                          |
++------------------------------------------------------------------------+
++-------------------------------------------+
+|    Manager for LNMP, Written by Licess    |
++-------------------------------------------+
+|              https://lnmp.org             |
++-------------------------------------------+
+nginx (pid 94183) is running...
+php-fpm is runing!
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/etc/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2020-08-13 08:11:34 CST; 1s ago
+   Main PID: 336940 (mysqld_safe)
+      Tasks: 17 (limit: 4587)
+     Memory: 58.3M
+     CGroup: /system.slice/mysql.service
+             ├─336940 /bin/sh /usr/local/mysql/bin/mysqld_safe --datadir=/usr/local/mysql/var --pid-file=/usr/local/mysql/var/riddle.pid
+             └─337434 /usr/local/mysql/bin/mysqld --basedir=/usr/local/mysql --datadir=/usr/local/mysql/var --plugin-dir=/usr/local/mysql/lib/plugin --user=mysql --log-error=riddle.err --open-files-limit=65535 --pid-file=/usr/local/mysql/var/riddle.pid --socket=/tmp/mysql.sock --port=3306
+
+Aug 13 08:11:32 riddle systemd[1]: Starting MySQL Community Server...
+Aug 13 08:11:32 riddle mysql[336926]: Starting MySQL
+Aug 13 08:11:34 riddle mysql[336926]: .. *
+Aug 13 08:11:34 riddle systemd[1]: Started MySQL Community Server.
+State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process
+LISTEN   0        511              0.0.0.0:80            0.0.0.0:*
+LISTEN   0        511              0.0.0.0:80            0.0.0.0:*
+LISTEN   0        4096       127.0.0.53%lo:53            0.0.0.0:*
+LISTEN   0        128              0.0.0.0:22            0.0.0.0:*
+LISTEN   0        50               0.0.0.0:3306          0.0.0.0:*
+LISTEN   0        128                 [::]:22               [::]:*
+Install lnmp takes 19 minutes.
+Install lnmp V1.7 completed! enjoy it.
+```
+
+某些系统可能会一直卡在Install lnmp V1.5 completed! enjoy it.不自动退出，可以按`Ctrl+c`退出。
 
 安装完成接下来开始使用就可以了，按添加虚拟主机教程，添加虚拟主机后可以使用sftp或ftp服务器上传网站代码，将域名解析到VPS或服务器的IP上，解析生效即可使用。
 
@@ -173,8 +229,8 @@ https://lnmp.org/faq/lnmp-status-manager.html
 ### 9、仅安装数据库、Nginx
 
 lnmp 1.5开始支持只安装MySQL/MariaDB数据库或Nginx
-增加单独nginx安装，安装包目录下运行：./install.sh nginx 进行安装；
-增加单独数据库安装，安装包目录下运行：./install.sh db 进行安装；
+增加单独nginx安装，安装包目录下运行：`./install.sh nginx` 进行安装；
+增加单独数据库安装，安装包目录下运行：`./install.sh db` 进行安装；
 
 ### 10、lnmp一键安装包支持完全离线模式进行安装
 
