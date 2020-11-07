@@ -57,6 +57,10 @@ drwxr-xr-x 14 www  www   4096 Aug 13 08:11 phpmyadmin/
 
 `ocp.php`, `phpinfo.php`, `phpmyadmin/`, `p.php`, 想在新站点使用的话复制过来就行。
 
+## 伪静态管理
+
+按照教程里的方法部署应该在设置时会提示服务器没有配置，当然勾选强制伪静态也没问题，但是百度一下能发现有专门针对typecho的伪静态设置方法。
+
 ## 参考
 
 - <https://www.jianshu.com/p/e15e39e90cfc>
